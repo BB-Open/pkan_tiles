@@ -10,21 +10,8 @@
   <includeDependencies package="." />
 
   <include package=".browser" />
-
-
-  <plone:tile
-      name="pkan.tiles.stat"
-      title="PKAN Statistics"
-      description="A tile that shows PKAN statistics."
-      add_permission="cmf.ModifyPortalContent"
-      class=".tile.PKANStatTile"
-      for="*"
-      permission="zope2.View"
-      schema=".tile.IPKANStatTile"
-      template="tile.pt"
-      />
-
-
+  <include package=".stat" />
+  
   <genericsetup:registerProfile
       name="default"
       title="pkan.tiles"

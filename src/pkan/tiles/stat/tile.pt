@@ -25,6 +25,10 @@
           <h6 tal:condition="python:htmltag == 'h6'" tal:content="view/tile_title">Title</h6>
         </tal:header>
       </div>
+      <div tal:repeat="line view/stat_count">
+        <div tal:content="line/label" />
+        <div tal:content="line/count" />
+      </div>
     </div>
 
   </body>

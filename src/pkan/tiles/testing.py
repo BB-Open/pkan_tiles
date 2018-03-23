@@ -20,30 +20,30 @@ class Fixture(PloneSandboxLayer):
         # Load ZCML
         import plone.app.mosaic
         self.loadZCML(package=plone.app.mosaic)
-        import collective.tiles.githubgist
-        self.loadZCML(package=collective.tiles.githubgist)
+        import pkan.tiles
+        self.loadZCML(package=pkan.tiles)
 
     def setUpPloneSite(self, portal):
         """Set up a Plone site for testing."""
         self.applyProfile(portal, 'plone.app.mosaic:default')
-        self.applyProfile(portal, 'collective.tiles.githubgist:default')
+        self.applyProfile(portal, 'pkan.tiles:default')
 
 
 FIXTURE = Fixture()
 INTEGRATION_TESTING = IntegrationTesting(
     bases=(FIXTURE, ),
-    name='collective.tiles.githubgist:Integration',
+    name='pkan.tiles:Integration',
 )
 
 FUNCTIONAL_TESTING = FunctionalTesting(
     bases=(FIXTURE, z2.ZSERVER_FIXTURE),
-    name='collective.tiles.githubgist:Functional',
+    name='pkan.tiles:Functional',
 )
 
 
 ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(FIXTURE, REMOTE_LIBRARY_BUNDLE_FIXTURE, z2.ZSERVER_FIXTURE),
-    name='collective.tiles.githubgist:Acceptance',
+    name='pkan.tiles:Acceptance',
 )
 
-ROBOT_TESTING = Layer(name='collective.tiles.githubgist:Robot')
+ROBOT_TESTING = Layer(name='pkan.tiles:Robot')
