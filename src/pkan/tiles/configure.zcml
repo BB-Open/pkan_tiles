@@ -11,7 +11,7 @@
 
   <include package=".browser" />
   <include package=".stat" />
-  
+
   <genericsetup:registerProfile
       name="default"
       title="pkan.tiles"
