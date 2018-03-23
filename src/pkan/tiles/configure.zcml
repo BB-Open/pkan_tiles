@@ -1,0 +1,59 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="pkan.tiles">
+
+  <i18n:registerTranslations directory="locales" />
+
+  <includeDependencies package="." />
+
+  <include package=".browser" />
+
+
+  <plone:tile
+      name="pkan.tiles.stat"
+      title="PKAN Statistics"
+      description="A tile that shows PKAN statistics."
+      add_permission="cmf.ModifyPortalContent"
+      class=".tile.PKANStatTile"
+      for="*"
+      permission="zope2.View"
+      schema=".tile.IPKANStatTile"
+      template="tile.pt"
+      />
+
+
+  <genericsetup:registerProfile
+      name="default"
+      title="pkan.tiles"
+      directory="profiles/default"
+      description="Installs the pkan.tiles add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.post_install"
+      />
+
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="pkan.tiles (uninstall)"
+      directory="profiles/uninstall"
+      description="Uninstalls the pkan.tiles add-on."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      post_handler=".setuphandlers.uninstall"
+      />
+
+  <genericsetup:registerProfile
+      name="mosaic_support"
+      title="PKAN tile (mosaic support)"
+      directory="profiles/mosaic_support"
+      description="Add this tile to mosaic list."
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+
+  <utility
+      factory=".setuphandlers.HiddenProfiles"
+      name="pkan.tiles-hiddenprofiles" />
+
+</configure>

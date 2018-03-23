@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xml:lang="en"
+      lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal">
+  <body tal:define="title context/Title|nothing"
+                    i18n:domain="plone">
+
+    <style type="text/css">
+      .highlight > pre {
+        background-color: transparent;
+      }
+    </style>
+    <div class="tileItem clearfix"
+        tal:attributes="class string:tileItem tile-id-${view/tile_id}">
+      <div class="tileHeading"
+          tal:condition="view/show_title">
+        <tal:header tal:define="htmltag python:view.title_level">
+          <h1 tal:condition="python:htmltag == 'h1'" tal:content="view/tile_title">Title</h1>
+          <h2 tal:condition="python:htmltag == 'h2'" tal:content="view/tile_title">Title</h2>
+          <h3 tal:condition="python:htmltag == 'h3'" tal:content="view/tile_title">Title</h3>
+          <h4 tal:condition="python:htmltag == 'h4'" tal:content="view/tile_title">Title</h4>
+          <h5 tal:condition="python:htmltag == 'h5'" tal:content="view/tile_title">Title</h5>
+          <h6 tal:condition="python:htmltag == 'h6'" tal:content="view/tile_title">Title</h6>
+        </tal:header>
+      </div>
+    </div>
+
+  </body>
+</html>

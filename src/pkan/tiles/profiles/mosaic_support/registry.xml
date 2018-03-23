@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<registry>
+  <records prefix="plone.app.mosaic.app_tiles.pkan_tiles"
+      interface="plone.app.mosaic.interfaces.ITile">
+    <value key="name">pkan.tiles.stat</value>
+    <value key="label">PKAN Statistics</value>
+    <value key="category">media</value>
+    <value key="tile_type">app</value>
+    <value key="default_value"></value>
+    <value key="read_only">false</value>
+    <value key="settings">true</value>
+    <value key="favorite">false</value>
+    <value key="rich_text">false</value>
+    <value key="weight">20</value>
+  </records>
+</registry>
