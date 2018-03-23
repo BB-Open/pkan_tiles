@@ -25,10 +25,13 @@
           <h6 tal:condition="python:htmltag == 'h6'" tal:content="view/tile_title">Title</h6>
         </tal:header>
       </div>
-      <div tal:repeat="line view/stat_count">
-        <div tal:content="line/label" />
-        <div tal:content="line/count" />
-      </div>
+      <nav id="category" class="documentByLine" role="navigation">
+        <ul aria-labelledby="categories-filed-under" tal:repeat="line view/stat_count">
+          <li >
+            <span class="link-category" tal:content="line"/>
+          </li>
+        </ul>
+      </nav>
     </div>
 
   </body>

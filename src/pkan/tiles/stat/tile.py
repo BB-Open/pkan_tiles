@@ -83,7 +83,5 @@ class PKANStatTile(tiles.Tile):
 
     def stat_count(self):
         for entry in self.stat():
-            yield {
-                'label': entry['label'],
-                'count': len(entry['results']),
-            }
+            yield entry['label'] + ': ' + str(len(entry['results']))
+
