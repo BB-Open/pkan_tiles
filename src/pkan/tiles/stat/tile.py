@@ -1,14 +1,7 @@
 # -*- coding: utf-8 -*-
 """Tile implementation."""
-from collections import OrderedDict
 from pkan.dcatapde.constants import DCAT_CTs
-from pkan.dcatapde.i18n import CT_DCAT_CATALOG
-from pkan.dcatapde.i18n import CT_DCAT_DATASET
-from pkan.dcatapde.i18n import CT_DCAT_DISTRIBUTION
 from pkan.dcatapde.i18n import CT_LABELS
-from pkan.dcatapde.i18n import LABEL_DCAT_CATALOG
-from pkan.dcatapde.i18n import LABEL_DCAT_DATASET
-from pkan.dcatapde.i18n import LABEL_DCAT_DISTRIBUTION
 from pkan.tiles import _
 from plone import api
 from plone import tiles
@@ -42,12 +35,6 @@ class IPKANStatTile(Schema):
         title=_(u'Headline level'),
         values=(u'h1', u'h2', u'h3', u'h4', u'h5', u'h6'),
     )
-
-
-STAT_TYPES = OrderedDict()
-STAT_TYPES[CT_DCAT_CATALOG] = LABEL_DCAT_CATALOG
-STAT_TYPES[CT_DCAT_DATASET] = LABEL_DCAT_DATASET
-STAT_TYPES[CT_DCAT_DISTRIBUTION] = LABEL_DCAT_DISTRIBUTION
 
 
 class PKANStatTile(tiles.Tile):
