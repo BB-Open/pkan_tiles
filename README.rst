@@ -5,7 +5,7 @@ This Plone Add-On adds tiles for PKAN to show itself in a mosaic framework.
 
 
 Mostly Harmless
----------------https://travis-ci.org/BB-Open/
+---------------
 
 .. image:: https://travis-ci.org/BB-Open/pkan.tiles.png?branch=master
     :target: http://travis-ci.org/BB-Open/pkan.tiles
