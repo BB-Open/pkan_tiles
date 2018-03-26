@@ -4,7 +4,7 @@
       interface="plone.app.mosaic.interfaces.ITile">
     <value key="name">pkan.tiles.stat</value>
     <value key="label">PKAN Statistics</value>
-    <value key="category">media</value>
+    <value key="category">advanced</value>
     <value key="tile_type">app</value>
     <value key="default_value"></value>
     <value key="read_only">false</value>
