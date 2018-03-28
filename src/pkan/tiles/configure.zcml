@@ -11,6 +11,8 @@
 
   <include package=".browser" />
   <include package=".stat" />
+  <include package=".folders" />
+  <include package=".imports"/>
 
   <genericsetup:registerProfile
       name="default"

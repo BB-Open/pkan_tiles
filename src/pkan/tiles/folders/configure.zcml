@@ -1,0 +1,20 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="pkan.tiles">
+
+  <plone:tile
+      name="pkan.tiles.folders"
+      title="PKAN Folders"
+      description="A tile that shows PKAN standard folders."
+      add_permission="cmf.ModifyPortalContent"
+      class=".tile.PKANFolderTile"
+      for="*"
+      permission="zope2.View"
+      schema=".tile.IPKANFolderTile"
+      template="tile.pt"
+      />
+
+</configure>
