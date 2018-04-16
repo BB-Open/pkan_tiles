@@ -12,7 +12,7 @@
       add_permission="cmf.ModifyPortalContent"
       class=".tile.PKANFolderTile"
       for="*"
-      permission="zope2.View"
+      permission="cmf.ModifyPortalContent"
       schema=".tile.IPKANFolderTile"
       template="tile.pt"
       />
