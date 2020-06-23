@@ -58,10 +58,9 @@ class PKANFolderTile(tiles.Tile):
         return self.data.get('title_level') or u'h2'
 
     def folder(self):
-        catalog = api.portal.get_tool('portal_catalog')
         for folder_name, folder_type in MANDATORY_FOLDERS.items():
-            results = catalog.searchResults(**{'portal_type': folder_type,
-                                               'title': folder_name})
+            results = api.content.find(**{'portal_type': folder_type,
+                                          'title': folder_name})
             yield {
                 'label': folder_name,
                 'url': results[0].getObject().absolute_url(),

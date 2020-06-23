@@ -60,11 +60,10 @@ class PKANImportTile(tiles.Tile):
         return self.data.get('title_level') or u'h2'
 
     def urls(self):
-        catalog = api.portal.get_tool('portal_catalog')
         for ct_name, import_url in IMPORT_URLS.items():
             ct_type = MANDATORY_FOLDERS[ct_name]
-            results = catalog.searchResults(**{'portal_type': ct_type,
-                                               'title': ct_name})
+            results = api.content.find(**{'portal_type': ct_type,
+                                          'title': ct_name})
             yield {
                 'label': ct_name + _(u' Import'),
                 'url': addTokenToUrl(

@@ -59,9 +59,8 @@ class PKANStatTile(tiles.Tile):
         return self.data.get('title_level') or u'h2'
 
     def stat(self):
-        catalog = api.portal.get_tool('portal_catalog')
         for portal_type in DCAT_CTs:
-            results = catalog.searchResults(**{'portal_type': portal_type})
+            results = api.content.find(**{'portal_type': portal_type})
             yield {
                 'portal_type': portal_type,
                 'label': CT_LABELS[portal_type],
